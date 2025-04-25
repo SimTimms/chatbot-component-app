@@ -12,3 +12,15 @@
 .read-the-docs {
   color: #888;
 }
+
+
+.session-id{
+  position: fixed;
+  bottom:0;
+  left:0;
+  z-index: 10;
+  background:rgba(0,0,0,0.1);
+  border-radius:3px;
+  padding:6px;  
+  width: 100vw;
+}

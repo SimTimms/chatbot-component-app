@@ -1,7 +1,7 @@
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 import Chatbot from './components/Chatbot';
 import { v4 as uuidv4 } from 'uuid';
-
+import './App.css';
 const theme = createTheme({
   palette: {
     primary: {
@@ -26,6 +26,9 @@ function App() {
         }}
         uuid={sessionId}
       />
+      <small className="session-id">
+        <b>Session ID:</b> {sessionId}
+      </small>
     </ThemeProvider>
   );
 }
