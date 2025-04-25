@@ -1,27 +1,30 @@
-import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
-import Chatbot from "./components/Chatbot";
-import { v4 as uuidv4 } from "uuid";
+import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
+import Chatbot from './components/Chatbot';
+import { v4 as uuidv4 } from 'uuid';
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#1976d2",
+      main: '#1976d2',
     },
   },
 });
+
+const sessionId = uuidv4();
+console.log('SESSION', sessionId);
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Chatbot
-        apiEndpoint="http://localhost:3001/api/chat/ask" // Replace with your API endpoint
+        apiEndpoint={import.meta.env.VITE_API_URL}
         title="AI Assistant"
         theme={{
-          primaryColor: "#1976d2",
-          secondaryColor: "#f5f5f5",
+          primaryColor: '#1976d2',
+          secondaryColor: '#f5f5f5',
         }}
-        uuid={uuidv4()}
+        uuid={sessionId}
       />
     </ThemeProvider>
   );
