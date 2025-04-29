@@ -11,7 +11,6 @@ const theme = createTheme({
 });
 
 const sessionId = uuidv4();
-console.log('SESSION', sessionId);
 
 function App() {
   return (
